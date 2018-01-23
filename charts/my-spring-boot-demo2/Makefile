@@ -42,6 +42,10 @@ else
 	echo "platfrom $(OS) not supported to release from"
 	exit -1
 endif
+	git config credential.https://github.com.username jenkins-x-bot
+	git config credential.helper store
+	cp /root/gitcreds/gitcredentials ~/.git-credentials
+	chmod 600  ~/.git-credentials
 	git add --all
 	git commit -m "release $(RELEASE_VERSION)" --allow-empty # if first release then no verion update is performed
 	git tag -fa v$(RELEASE_VERSION) -m "Release version $(RELEASE_VERSION)"
