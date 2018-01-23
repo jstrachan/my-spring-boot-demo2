@@ -1,0 +1,9 @@
++ make tag
+sed -i -e "s/version:.*/version: 0.0.1/" Chart.yaml
+sed -i -e "s/repository: .*/repository: 10.109.45.53:5000\/jenkinsx\/my-spring-boot-demo2/" values.yaml
+sed -i -e "s/tag: .*/tag: 0.0.1/" values.yaml
+git config credential.https://github.com.username jenkins-x-bot
+git config credential.helper store
+cp /root/gitcreds/gitcredentials ~/.git-credentials
+chmod 600  ~/.git-credentials
+git add --all
