@@ -50,5 +50,14 @@
 		</plugins>
 	</build>
 
-
+  <distributionManagement>
+    <repository>
+      <id>local-nexus</id>
+      <url>http://jenkins-x-sonatype-nexus:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>local-nexus</id>
+      <url>http://jenkins-x-sonatype-nexus:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
